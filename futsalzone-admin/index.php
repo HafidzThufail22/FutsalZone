@@ -6,19 +6,6 @@ include '../includes/fungsi.php';
 // Hitung statistik
 $total_lapangan = mysqli_num_rows(getLapangan($koneksi));
 $total_reservasi = mysqli_num_rows(getRiwayatReservasi($koneksi));
-
-// Reservasi hari ini
-$today = date('Y-m-d');
-$query_today = "SELECT COUNT(*) as reservasi_today FROM reservasi WHERE tanggal = '$today'";
-$result_today = mysqli_query($koneksi, $query_today);
-$reservasi_today = mysqli_fetch_assoc($result_today)['reservasi_today'];
-
-// Reservasi minggu ini
-$week_start = date('Y-m-d', strtotime('monday this week'));
-$week_end = date('Y-m-d', strtotime('sunday this week'));
-$query_week = "SELECT COUNT(*) as reservasi_week FROM reservasi WHERE tanggal BETWEEN '$week_start' AND '$week_end'";
-$result_week = mysqli_query($koneksi, $query_week);
-$reservasi_week = mysqli_fetch_assoc($result_week)['reservasi_week'];
 ?>
 
 <!DOCTYPE html>
@@ -85,30 +72,6 @@ $reservasi_week = mysqli_fetch_assoc($result_week)['reservasi_week'];
                     </div>
                 </div>
             </div>
-
-            <div class="bg-white rounded-xl shadow-lg p-6">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <p class="text-gray-600 text-sm">Reservasi Hari Ini</p>
-                        <p class="text-3xl font-bold text-purple-600"><?= $reservasi_today ?></p>
-                    </div>
-                    <div class="bg-purple-100 p-3 rounded-full">
-                        <i class="fas fa-clock text-purple-600 text-xl"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-lg p-6">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <p class="text-gray-600 text-sm">Reservasi Minggu Ini</p>
-                        <p class="text-3xl font-bold text-orange-600"><?= $reservasi_week ?></p>
-                    </div>
-                    <div class="bg-orange-100 p-3 rounded-full">
-                        <i class="fas fa-chart-line text-orange-600 text-xl"></i>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <!-- Menu Admin -->
@@ -147,7 +110,7 @@ $reservasi_week = mysqli_fetch_assoc($result_week)['reservasi_week'];
             <div class="bg-white rounded-xl shadow-lg p-6">
                 <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
                     <i class="fas fa-chart-bar mr-3 text-purple-600"></i>
-                    Statistik Cepat
+                    Data Statistik
                 </h3>
 
                 <div class="space-y-4">
@@ -158,14 +121,6 @@ $reservasi_week = mysqli_fetch_assoc($result_week)['reservasi_week'];
                     <div class="flex justify-between items-center">
                         <span class="text-gray-600">Total Booking</span>
                         <span class="font-bold text-green-600"><?= $total_reservasi ?></span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-gray-600">Booking Hari Ini</span>
-                        <span class="font-bold text-purple-600"><?= $reservasi_today ?></span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-gray-600">Booking Minggu Ini</span>
-                        <span class="font-bold text-orange-600"><?= $reservasi_week ?></span>
                     </div>
                 </div>
             </div>

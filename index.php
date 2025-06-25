@@ -36,6 +36,20 @@ $lapangan_result = getLapangan($koneksi);
             </div>
         </div>
     </header>
+    <!-- Landing Page -->
+    <section class="bg-cover bg-center h-96" style="background-image: url('asset/lapangan2.jpg');">
+        <div class="flex items-center justify-center h-full bg-black bg-opacity-50">
+            <div class="text-center text-white">
+                <h2 class="text-4xl font-bold mb-4">Selamat Datang di FutsalZone</h2>
+                <p class="text-lg mb-6">Nikmati pengalaman bermain futsal terbaik di FutsalZone!
+                    Kami menghadirkan lapangan futsal berstandar FIFA,<br> lengkap dengan fasilitas modern dan super nyaman untuk bermain</p>
+                <a href="reservasi.php" class="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-lg transition duration-300">
+                    <i class="fas fa-calendar-plus mr-2"></i>
+                    Buat Reservasi Sekarang
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Content -->
     <div class="container mx-auto px-4 py-8">
