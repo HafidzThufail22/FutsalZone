@@ -48,27 +48,26 @@ $total_reservasi = mysqli_num_rows(getRiwayatReservasi($koneksi));
 
     <div class="container mx-auto px-4 py-8">
         <!-- Statistics Cards -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <div class="bg-white rounded-xl shadow-lg p-6">
-                <div class="flex items-center justify-between">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white rounded-2xl border border-blue-100 shadow-md hover:shadow-xl transition-all duration-300 p-6 flex flex-col justify-between h-36">
+                <div class="flex items-center justify-between mb-2">
                     <div>
-                        <p class="text-gray-600 text-sm">Total Lapangan</p>
-                        <p class="text-3xl font-bold text-blue-600"><?= $total_lapangan ?></p>
+                        <p class="text-gray-500 text-sm">Total Lapangan</p>
+                        <p class="text-3xl font-extrabold text-blue-600 mt-1"><?= $total_lapangan ?></p>
                     </div>
-                    <div class="bg-blue-100 p-3 rounded-full">
-                        <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
+                    <div class="bg-blue-100 p-4 rounded-full flex items-center justify-center">
+                        <i class="fas fa-map-marker-alt text-blue-600 text-2xl"></i>
                     </div>
                 </div>
             </div>
-
-            <div class="bg-white rounded-xl shadow-lg p-6">
-                <div class="flex items-center justify-between">
+            <div class="bg-white rounded-2xl border border-green-100 shadow-md hover:shadow-xl transition-all duration-300 p-6 flex flex-col justify-between h-36">
+                <div class="flex items-center justify-between mb-2">
                     <div>
-                        <p class="text-gray-600 text-sm">Total Reservasi</p>
-                        <p class="text-3xl font-bold text-green-600"><?= $total_reservasi ?></p>
+                        <p class="text-gray-500 text-sm">Total Reservasi</p>
+                        <p class="text-3xl font-extrabold text-green-600 mt-1"><?= $total_reservasi ?></p>
                     </div>
-                    <div class="bg-green-100 p-3 rounded-full">
-                        <i class="fas fa-calendar-check text-green-600 text-xl"></i>
+                    <div class="bg-green-100 p-4 rounded-full flex items-center justify-center">
+                        <i class="fas fa-calendar-check text-green-600 text-2xl"></i>
                     </div>
                 </div>
             </div>
