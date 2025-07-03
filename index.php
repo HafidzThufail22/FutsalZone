@@ -37,7 +37,7 @@ $lapangan_result = getLapangan($koneksi);
         </div>
     </header>
     <!-- Landing Page -->
-    <section class="bg-cover bg-center h-96" style="background-image: url('asset/lapangan2.jpg');">
+    <section class="bg-cover bg-center h-96" style="background-image: url('asset/Lapangan.jpg');">
         <div class="flex items-center justify-center h-full bg-black bg-opacity-50">
             <div class="text-center text-white">
                 <h2 class="text-4xl font-bold mb-4">Selamat Datang di FutsalZone</h2>

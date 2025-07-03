@@ -176,7 +176,7 @@ $total_reservasi = mysqli_num_rows(getRiwayatReservasi($koneksi));
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-6 mt-12">
         <div class="container mx-auto px-4 text-center">
-            <p class="text-gray-400">&copy; 2025 FutsalZone. Admin Panel.</p>
+            <p class="text-gray-400">&copy; 2025 FutsalZone. Admin.</p>
         </div>
     </footer>
 </body>

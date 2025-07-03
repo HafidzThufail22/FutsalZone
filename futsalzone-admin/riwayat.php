@@ -15,30 +15,40 @@ $daftar_reservasi = ambilReservasi($koneksi);
     <link href="../css/styles.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100 min-h-screen flex flex-col">
-    <!-- Header/Navigation -->
-    <nav class="bg-white shadow-lg">
-        <div class="container mx-auto px-6 flex items-center justify-between py-4">
-            <h1 class="text-2xl font-bold text-indigo-800">FutsalZone Admin</h1>
-            <div class="flex space-x-4">
-                <a href="index.php" class="tombol tombol-sekunder">
-                    <i class="fas fa-home mr-2"></i>Dasbor
-                </a>
-                <a href="tambah_lapangan.php" class="tombol tombol-sekunder">
-                    <i class="fas fa-plus mr-2"></i>Tambah Lapangan
-                </a>
-                <a href="riwayat.php" class="tombol tombol-utama">
-                    <i class="fas fa-history mr-2"></i>Riwayat Pemesanan
-                </a>
+<body class="bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-futbol text-2xl text-black-800"></i>
+                    <h1 class="text-2xl font-bold text-gray-800">FutsalZone Admin</h1>
+                </div>
+                <nav class="space-x-4">
+                    <a href="index.php"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-300">
+                        <i class="fas fa-home mr-2"></i>
+                        Dashboard
+                    </a>
+                    <a href="tambah_lapangan.php"
+                        class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition duration-300">
+                        <i class="fas fa-plus mr-2"></i>
+                        Tambah Lapangan
+                    </a>
+                    <a href="logout.php"
+                        class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition duration-300">
+                        <i class="fas fa-sign-out-alt mr-2"></i>
+                        Logout
+                    </a>
+                </nav>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Main Content -->
-    <main class="flex-grow container mx-auto px-6 py-8">
-        <div class="bg-white rounded-lg shadow-md p-6">
+    <div class="container mx-auto px-4 py-8">
+        <div class="bg-white rounded-xl shadow-lg p-6">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-semibold text-indigo-800">
+                <h2 class="text-2xl font-bold text-gray-800">
                     <i class="fas fa-history mr-2 text-green-600"></i>
                     Riwayat Pemesanan
                 </h2>
@@ -46,24 +56,32 @@ $daftar_reservasi = ambilReservasi($koneksi);
                     <input type="text" placeholder="Cari..."
                         class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                         style="max-width: 200px;">
-                    <button class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    <button
+                        class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition duration-300">
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
             </div>
 
             <!-- Table -->
-            <div class="overflow-x-auto rounded-lg border border-gray-200">
+            <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                         <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Lapangan</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jenis</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pemesan</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jam</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Lapangan
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jenis
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pemesan
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jam
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi
+                            </th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
@@ -74,11 +92,16 @@ $daftar_reservasi = ambilReservasi($koneksi);
                         <?php else: ?>
                             <?php foreach ($daftar_reservasi as $res): ?>
                                 <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?php echo htmlspecialchars($res['nama_lapangan']); ?></td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?php echo htmlspecialchars($res['jenis']); ?></td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?php echo htmlspecialchars($res['nama_pemesan']); ?></td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?php echo formatTanggal($res['tanggal']); ?></td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?php echo formatWaktu($res['jam_mulai']) . ' - ' . formatWaktu($res['jam_selesai']); ?></td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?php echo htmlspecialchars($res['nama_lapangan']); ?>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?php echo htmlspecialchars($res['jenis']); ?>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?php echo htmlspecialchars($res['nama_pemesan']); ?>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?php echo formatTanggal($res['tanggal']); ?>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?php echo formatWaktu($res['jam_mulai']) . ' - ' . formatWaktu($res['jam_selesai']); ?>
+                                    </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                                             Aktif
@@ -95,12 +118,11 @@ $daftar_reservasi = ambilReservasi($koneksi);
                 </table>
             </div>
         </div>
-    </main>
+    </div>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-6 mt-auto">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-gray-300">© 2025 FutsalZone. Semua hak cipta dilindungi.</p>
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2025 FutsalZone. Admin.</p>
         </div>
     </footer>
 </body>
