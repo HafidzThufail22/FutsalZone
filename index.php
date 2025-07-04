@@ -119,13 +119,6 @@ $lapangan_result = getLapangan($koneksi);
             </div>
         </div>
     </footer>
-
-    <script>
-        // Add any JavaScript functionality here
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add animations or interactivity if needed
-        });
-    </script>
 </body>
 
 </html>
