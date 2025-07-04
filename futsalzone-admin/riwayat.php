@@ -120,7 +120,7 @@ $daftar_reservasi = ambilReservasi($koneksi);
         </div>
     </div>
 
-    <footer class="bg-gray-800 text-white py-6 mt-auto">
+    <footer class="bg-gray-800 text-white py-6 mt-auto w-full fixed bottom-0 left-0">
         <div class="container mx-auto px-4 text-center">
             <p class="text-gray-400">&copy; 2025 FutsalZone. Admin.</p>
         </div>
