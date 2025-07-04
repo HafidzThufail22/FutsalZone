@@ -1,3 +1,7 @@
+CREATE DATABASE futsalzone;
+
+USE futsalzone;
+
 CREATE TABLE lapangan (
     id_lapangan INT(11) PRIMARY KEY AUTO_INCREMENT,
     nama_lapangan VARCHAR(100) NOT NULL,
